@@ -1,5 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
+require('dotenv').config(); // Load environment variables
 const inventoryRouter = require("./Routes/inventoryRoutes.js");
 const employeeRouter = require("./routers/employees.js");
 const striperoute = require("./routers/Stripe.js")
@@ -39,11 +40,11 @@ app.use('/product',productroute);
 app.use('/stripes',striperoute);
 app.use('/transaction',transactionroute);
 app.use('/api/auth', authRouter);
-mongoose.connect('mongodb+srv://Kaviya:kavindu@cluster0.vlphs.mongodb.net/FRESHFARE')
+mongoose.connect(process.env.MONGODB_URI)
   .then(() => {
     console.log('Connected to MongoDB');
-    const server = app.listen(5000, () => {
-      console.log('Server running on port 5000');
+    const server = app.listen(process.env.PORT || 5000, () => {
+      console.log(`Server running on port ${process.env.PORT || 5000}`);
     });
 
     // Initialize Socket.IO
