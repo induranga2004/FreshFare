@@ -19,7 +19,7 @@ FreshFare is an all-in-one POS solution that transforms manual retail operations
 
 | Name | Registration Number | Email | Role |
 |------|-------------------|-------|------|
-| **P.A.H.I Gunasekara** | IT23232136 | IT23232136@my.sliit.lk | **Project Lead** |
+| **P.A.H.I Gunasekara** | IT23232136 | IT23232136@my.sliit.lk | **Scrum Master** |
 | K.S.H Liyanage | IT23382558 | IT23382558@my.sliit.lk | Full Stack Developer |
 | V.S Hettiarachchi | IT23382176 | IT23382176@my.sliit.lk | Backend Developer |
 | R.R.D Pinto | IT23319806 | IT23319806@my.sliit.lk | Frontend Developer |
