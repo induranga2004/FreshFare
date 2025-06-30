@@ -1,0 +1,47 @@
+/* Global resets and base styles */
+:root {
+  /* Base font size for rem calculations */
+  font-size: 16px;
+}
+
+/* Supplier Management Style Isolation */
+.supplier-form {
+  /* Create isolation context */
+  isolation: isolate;
+  position: relative;
+  /* Reset inherited styles */
+  font-size: 16px;
+  line-height: 1.5;
+  color: inherit;
+  /* Prevent style leaks */
+  all: initial;
+  font-family: inherit;
+}
+
+/* Ensure proper box sizing for supplier components */
+.supplier-form *,
+.supplier-form *::before,
+.supplier-form *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Reset form elements within supplier components */
+.supplier-form input,
+.supplier-form select,
+.supplier-form button {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+}
+
+/* Prevent conflicts with other form styles */
+.supplier-form input:-webkit-autofill,
+.supplier-form input:-webkit-autofill:hover,
+.supplier-form input:-webkit-autofill:focus,
+.supplier-form input:-webkit-autofill:active {
+  transition: background-color 5000s ease-in-out 0s;
+  -webkit-text-fill-color: inherit !important;
+} 

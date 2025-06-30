@@ -1,0 +1,251 @@
+.update-item-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.update-item-container::before {
+  content: '';
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  top: -50%;
+  left: -50%;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+  opacity: 0.5;
+  z-index: 0;
+}
+
+.update-item-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  padding: 2.5rem 2rem;
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  position: relative;
+  z-index: 1;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.update-item-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.update-item-card h2 {
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.update-item-card h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 3px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 3px;
+}
+
+.update-item-select-group {
+  position: relative;
+  width: 100%;
+}
+
+.update-item-select-group .input-icon {
+  top: 2.3rem;
+}
+
+.update-item-select {
+  padding-left: 2.5rem !important;
+}
+
+.update-item-label {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #4b5563;
+  margin-bottom: 0.25rem;
+}
+
+.update-item-select:hover {
+  border-color: #667eea;
+}
+
+.update-item-select:focus {
+  border-color: #667eea;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.update-item-error {
+  color: #e74c3c;
+  background: rgba(231, 76, 60, 0.1);
+  border: 1px solid #e74c3c;
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+  margin: 0.5rem 0;
+  font-size: 0.95rem;
+  animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+/* Style for input fields */
+.update-item-card input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 2px solid rgba(102, 126, 234, 0.2);
+  border-radius: 8px;
+  font-size: 1rem;
+  background: white;
+  color: #2d3748;
+  transition: all 0.3s ease;
+}
+
+.update-item-card input:focus {
+  border-color: #667eea;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.update-item-card input:hover {
+  border-color: #667eea;
+}
+
+/* Style for the submit button */
+.update-item-card button[type="submit"] {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+}
+
+.update-item-card button[type="submit"]:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.update-item-card button[type="submit"]:disabled {
+  background: #cbd5e0;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.title-icon {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.input-group {
+  position: relative;
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
+
+.input-icon {
+  position: absolute;
+  left: 1rem;
+  top: 2.5rem;
+  color: #667eea;
+  opacity: 0.7;
+  z-index: 1;
+}
+
+.input-group input {
+  padding-left: 2.5rem !important;
+}
+
+.icon {
+  font-size: 1.1rem;
+}
+
+.error-icon {
+  margin-right: 0.5rem;
+  color: #e74c3c;
+}
+
+.submit-button {
+  margin-top: 1rem;
+}
+
+/* Fix for Input component */
+.input-container {
+  position: relative;
+  width: 100%;
+}
+
+.input-container input {
+  padding-left: 2.5rem !important;
+}
+
+@media (max-width: 600px) {
+  .update-item-container {
+    padding: 1rem;
+  }
+
+  .update-item-card {
+    padding: 2rem 1.5rem;
+    max-width: 95vw;
+    gap: 1rem;
+  }
+
+  .update-item-card h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+
+  .update-item-select,
+  .update-item-card input {
+    padding: 0.6rem 0.8rem;
+    font-size: 0.95rem;
+  }
+
+  .update-item-label {
+    font-size: 0.9rem;
+  }
+
+  .input-icon {
+    top: 2.3rem;
+    left: 0.8rem;
+    font-size: 1rem;
+  }
+  
+  .input-group input,
+  .update-item-select {
+    padding-left: 2.2rem !important;
+  }
+}

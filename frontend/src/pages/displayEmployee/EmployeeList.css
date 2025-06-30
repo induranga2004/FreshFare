@@ -1,0 +1,475 @@
+/* General Styles */
+.list-container {
+    padding: 1.5rem;
+    max-width: 98%;
+    margin: 1rem auto;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  }
+  
+  .list-container h2 {
+    color: #2c3e50;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 0.5rem;
+  }
+  
+  .list-container h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: #4299e1;
+    border-radius: 2px;
+  }
+  
+  /* Add Employee Button */
+  .add-btn {
+    background-color: #4299e1;
+    color: white;
+    padding: 0.7rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: 0 2px 4px rgba(66, 153, 225, 0.2);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .add-btn::before {
+    content: '+';
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-right: 0.3rem;
+  }
+  
+  .add-btn:hover {
+    background-color: #3182ce;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(66, 153, 225, 0.3);
+  }
+  
+  .add-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(66, 153, 225, 0.2);
+  }
+  
+  .add-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.4);
+  }
+  
+  /* Table Styles */
+  table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-top: 1rem;
+    background: #ffffff;
+    border-radius: 8px;
+    overflow: visible;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    table-layout: fixed;
+  }
+  
+  thead {
+    background-color: #f7fafc;
+  }
+  
+  th {
+    padding: 0.7rem;
+    text-align: left;
+    font-weight: 600;
+    color: #4a5568;
+    border-bottom: 2px solid #e2e8f0;
+    font-size: 0.85rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  td {
+    padding: 0.7rem;
+    border-bottom: 1px solid #e2e8f0;
+    color: #2d3748;
+    font-size: 0.85rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  tbody tr {
+    transition: all 0.3s ease;
+  }
+  
+  tbody tr:hover {
+    background-color: #f8fafc;
+  }
+  
+  /* Action Column */
+  td:last-child {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    justify-content: center;
+    align-items: center;
+    padding: 0.6rem;
+    min-width: 160px;
+    position: relative;
+    overflow: visible;
+    text-align: center;
+  }
+  
+  /* Action Buttons */
+  .view-btn, .edit-btn, .delete-btn {
+    padding: 0.35rem 0.7rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    font-weight: 500;
+    margin: 0 auto;
+    transition: all 0.3s ease;
+    min-width: 60px;
+    width: 80%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+  }
+  
+  .view-btn {
+    background-color: #4299e1;
+    color: white;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+  }
+  
+  .view-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #4299e1, #667eea);
+    z-index: -1;
+    transition: opacity 0.3s;
+    opacity: 0;
+  }
+  
+  .view-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(66, 153, 225, 0.3);
+  }
+  
+  .view-btn:hover::before {
+    opacity: 1;
+  }
+  
+  /* Info icon next to view button */
+  .view-btn::after {
+    content: 'ℹ️';
+    font-size: 0.9rem;
+    margin-left: 0.3rem;
+  }
+  
+  .edit-btn {
+    background-color: #48bb78;
+    color: white;
+  }
+  
+  .edit-btn:hover {
+    background-color: #38a169;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(72, 187, 120, 0.3);
+  }
+  
+  .delete-btn {
+    background-color: #e53e3e;
+    color: white;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .delete-btn:hover {
+    background-color: #c53030;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(229, 62, 62, 0.2);
+  }
+  
+  /* Column Widths */
+  th:nth-child(1), td:nth-child(1) { width: 6%; } /* First Name */
+  th:nth-child(2), td:nth-child(2) { width: 6%; } /* Last Name */
+  th:nth-child(3), td:nth-child(3) { width: 4%; } /* Gender */
+  th:nth-child(4), td:nth-child(4) { width: 7%; } /* Date of Birth */
+  th:nth-child(5), td:nth-child(5) { width: 6%; } /* Role */
+  th:nth-child(6), td:nth-child(6) { width: 6%; } /* Password */
+  th:nth-child(7), td:nth-child(7) { width: 10%; } /* Address */
+  th:nth-child(8), td:nth-child(8) { width: 10%; } /* Email */
+  th:nth-child(9), td:nth-child(9) { width: 3%; } /* Age */
+  th:nth-child(10), td:nth-child(10) { width: 7%; } /* Mobile Number */
+  th:nth-child(11), td:nth-child(11) { width: 15%; } /* Actions */
+  
+  /* Responsive Design */
+  @media (max-width: 1400px) {
+    .list-container {
+      max-width: 98%;
+      padding: 1rem;
+      overflow-x: auto;
+    }
+  
+    table {
+      min-width: 1200px;
+    }
+  
+    .view-btn, .edit-btn, .delete-btn {
+      width: 85%;
+    }
+  }
+  
+  @media (max-width: 1024px) {
+    .list-container {
+      padding: 0.8rem;
+      margin: 0.8rem;
+    }
+  
+    table {
+      min-width: 1100px;
+    }
+  
+    .view-btn, .edit-btn, .delete-btn {
+      width: 90%;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .list-container {
+      padding: 0.5rem;
+      margin: 0.5rem;
+    }
+  
+    table {
+      min-width: 1000px;
+    }
+  
+    .view-btn, .edit-btn, .delete-btn {
+      padding: 0.3rem 0.6rem;
+      font-size: 0.75rem;
+      min-width: 55px;
+      width: 95%;
+    }
+  
+    .add-btn, .generate-report-btn {
+      width: 100%;
+      justify-content: center;
+      padding: 0.6rem 1.2rem;
+      font-size: 0.85rem;
+    }
+  
+    .search-filter {
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+  
+    .search-input {
+      width: 100%;
+    }
+  
+    .generate-report-btn {
+      width: 100%;
+    }
+  }
+  
+  /* Loading State */
+  .loading {
+    text-align: center;
+    padding: 2rem;
+    color: #4a5568;
+    font-size: 1.1rem;
+  }
+  
+  /* Empty State */
+  .empty-state {
+    text-align: center;
+    padding: 3rem;
+    color: #4a5568;
+  }
+  
+  .empty-state p {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+  }
+  
+  /* Search and Filter Section */
+  .search-filter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.2rem;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  .search-input {
+    flex: 1;
+    min-width: 250px;
+    padding: 0.7rem 1rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    color: #4a5568;
+    background-color: #f8fafc;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+  }
+  
+  .search-input:focus {
+    outline: none;
+    border-color: #4299e1;
+    box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.2);
+  }
+  
+  .generate-report-btn {
+    background-color: #805ad5;
+    color: white;
+    padding: 0.7rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: 0 2px 4px rgba(128, 90, 213, 0.2);
+    white-space: nowrap;
+  }
+  
+  .generate-report-btn::before {
+    content: '📄';
+    font-size: 1.1rem;
+    margin-right: 0.3rem;
+  }
+  
+  .generate-report-btn:hover {
+    background-color: #6b46c1;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(128, 90, 213, 0.3);
+  }
+  
+  .generate-report-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(128, 90, 213, 0.2);
+  }
+  
+  .generate-report-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(128, 90, 213, 0.4);
+  }
+  
+  .filter-select {
+    padding: 0.8rem;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    background-color: white;
+    min-width: 150px;
+    cursor: pointer;
+  }
+  
+  /* Pagination */
+  .pagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 2rem;
+  }
+  
+  .pagination button {
+    padding: 0.5rem 1rem;
+    border: 1px solid #e2e8f0;
+    background-color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .pagination button:hover {
+    background-color: #f7fafc;
+    border-color: #4299e1;
+  }
+  
+  .pagination button.active {
+    background-color: #4299e1;
+    color: white;
+    border-color: #4299e1;
+  }
+  
+  /* Sales data columns */
+  .sales-count, .sales-amount {
+    font-weight: 600;
+    color: #2b6cb0;
+    position: relative;
+  }
+  
+  .sales-count {
+    background-color: rgba(235, 248, 255, 0.5); /* Light blue background */
+  }
+  
+  .sales-amount {
+    background-color: rgba(235, 248, 255, 0.3); /* Lighter blue background */
+  }
+  
+  .non-cashier {
+    color: #a0aec0;
+    font-style: italic;
+    background-color: #f7fafc;
+  }
+  
+  /* Highlight row on hover with sales data */
+  tbody tr:hover .sales-count {
+    background-color: rgba(235, 248, 255, 0.8);
+  }
+  
+  tbody tr:hover .sales-amount {
+    background-color: rgba(235, 248, 255, 0.6);
+  }
+  
+  /* Add a small badge for cashiers */
+  td:nth-child(4):contains("Cashier") {
+    position: relative;
+  }
+  
+  td:nth-child(4) {
+    position: relative;
+  }
+  
+  td[title="Cashier"]::after,
+  td:nth-child(4):has(span:contains("Cashier"))::after {
+    content: '💰';
+    margin-left: 0.5rem;
+    font-size: 0.9rem;
+  }
+  
+  /* Fix column widths for sales data */
+  th:nth-child(8), td:nth-child(8) { width: 8%; } /* Sales Count */
+  th:nth-child(9), td:nth-child(9) { width: 10%; } /* Sales Amount */
+  

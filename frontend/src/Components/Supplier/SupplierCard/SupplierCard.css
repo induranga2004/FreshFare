@@ -1,0 +1,86 @@
+.supplier-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.supplier-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.supplier-info {
+    margin-bottom: 1.5rem;
+}
+
+.supplier-name {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.supplier-name h3 {
+    font-size: 1.25rem;
+    color: #2d3748;
+    margin: 0;
+}
+
+.supplier-detail {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #4a5568;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.icon {
+    color: #4299e1;
+    font-size: 1rem;
+    min-width: 1rem;
+}
+
+.status {
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.status.paid {
+    background: #c6f6d5;
+    color: #2f855a;
+}
+
+.status.unpaid {
+    background: #fed7d7;
+    color: #c53030;
+}
+
+.supplier-actions {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: flex-end;
+}
+
+.action-button {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+    .supplier-card {
+        padding: 1rem;
+    }
+
+    .supplier-actions {
+        flex-direction: column;
+    }
+
+    .action-button {
+        width: 100%;
+    }
+} 
